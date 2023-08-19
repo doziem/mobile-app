@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './productCardView.style';
 import { COLORS } from '../../constants';
 
-export default function ProductCardView() {
+export default function ProductCardView({ item }) {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.navigate('productDetails')}>
@@ -21,7 +21,7 @@ export default function ProductCardView() {
         </View>
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            Product: cfgxdfhtfdxbnzdfhbgxdrhtbxdf
+            {item?.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
             Product:

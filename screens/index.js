@@ -5,6 +5,7 @@ import Search from "./Search";
 import Setting from "./Setting";
 import Cart from "./Cart";
 import ProductDetails from "./ProductDetails";
+import NewArivals from "./NewArivals";
 
 
 export {
@@ -13,5 +14,6 @@ export {
     Search,
     Setting,
     Cart,
-    ProductDetails
+    ProductDetails,
+    NewArivals
 }
