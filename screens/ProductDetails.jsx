@@ -10,8 +10,11 @@ import {
 import styles from './productDetails.style';
 import { COLORS, SIZES } from '../constants';
 
-const ProductDetails = ({ navigation }) => {
+const ProductDetails = ({ navigation, route }) => {
   const [count, setCount] = useState(1);
+
+  const { imageUrl, description, title, product_location, price } =
+    route?.params;
 
   const increment = () => {
     setCount(count + 1);
@@ -22,6 +25,7 @@ const ProductDetails = ({ navigation }) => {
       setCount(count - 1);
     }
   };
+
   return (
     <View style={styles.container}>
       <View style={styles.upperRow}>
@@ -35,7 +39,7 @@ const ProductDetails = ({ navigation }) => {
       </View>
       <Image
         source={{
-          uri: 'https://res.cloudinary.com/dt6mlbsv5/image/upload/v1691304920/tjkj4mksrtlb2nwa8edg.jpg',
+          uri: imageUrl,
         }}
         style={styles.image}
       />
@@ -44,7 +48,7 @@ const ProductDetails = ({ navigation }) => {
         <View style={styles.titleRow}>
           <Text style={styles.title}>Product</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$104.99</Text>
+            <Text style={styles.price}>{price} </Text>
           </View>
         </View>
         <View style={styles.ratingRow}>
@@ -67,18 +71,13 @@ const ProductDetails = ({ navigation }) => {
         </View>
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
-          <Text style={styles.descText}>
-            This way, you can add the . env file to the React Project. When
-            working on a large-scale project, you must add separate custom
-            variables for production and development. For instance, you have the
-            live API link for production and the test API link for development,
-          </Text>
+          <Text style={styles.descText}>{description}</Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.location}>
             <View style={{ flexDirection: 'row' }}>
               <Ionicons name="location-outline" size={20} />
-              <Text> Enugu </Text>
+              <Text> {product_location} </Text>
             </View>
 
             <View style={{ flexDirection: 'row' }}>

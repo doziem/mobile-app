@@ -67,7 +67,8 @@ const Search = () => {
         <FlatList
           data={searchResult}
           keyExtractor={(item) => item._id}
-          renderItem={({ item }) => <SearchProducts />}
+          renderItem={({ item }) => <SearchProducts item={item} />}
+          style={{ marginHorizontal: 12 }}
         />
       )}
     </SafeAreaView>

@@ -22,7 +22,7 @@ const ProductList = () => {
         numColumns={2}
         // initialNumToRender={4}
         keyExtractor={(item) => item.id}
-        renderItem={(item) => <ProductCardView item={item} />}
+        renderItem={({ item }) => <ProductCardView item={item} />}
         contentContainerStyle={styles.container}
         ItemSeparatorComponent={() => <View style={styles.seperator} />}
       />

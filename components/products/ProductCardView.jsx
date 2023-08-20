@@ -9,12 +9,14 @@ import { COLORS } from '../../constants';
 export default function ProductCardView({ item }) {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('productDetails')}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('productDetails', item)}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             source={{
-              uri: 'https://res.cloudinary.com/dt6mlbsv5/image/upload/v1691304839/qjwbw1wqddvevpsllk8l.jpg',
+              uri: item?.imageUrl,
             }}
             style={styles.image}
           />
@@ -26,7 +28,7 @@ export default function ProductCardView({ item }) {
           <Text style={styles.supplier} numberOfLines={2}>
             Product:
           </Text>
-          <Text style={styles.price}>$12,312</Text>
+          <Text style={styles.price}>{item?.price} </Text>
         </View>
         <TouchableOpacity style={styles.addBtn}>
           <Ionicons name="add-circle" size={35} color={COLORS.primary} />
