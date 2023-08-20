@@ -15,6 +15,6 @@ export default styles = StyleSheet.create({
         marginLeft: SIZES.small / 2
     },
     seperator: {
-        height: 16
+        height: 12
     }
 })

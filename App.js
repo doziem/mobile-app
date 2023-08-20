@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-
+import { useKeepAwake } from 'expo-keep-awake';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -28,6 +28,7 @@ export default function App() {
 
   });
 
+  useKeepAwake();
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();

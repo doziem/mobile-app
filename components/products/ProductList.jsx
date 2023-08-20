@@ -7,7 +7,7 @@ import { COLORS, SIZES } from '../../constants';
 import ProductCardView from './ProductCardView';
 
 const ProductList = () => {
-  const { data, error, isLoading } = useFetch;
+  const { data, error, isLoading } = useFetch();
   if (isLoading) {
     return (
       <View style={styles.loadingContainer}>
@@ -20,6 +20,7 @@ const ProductList = () => {
       <FlatList
         data={data}
         numColumns={2}
+        // initialNumToRender={4}
         keyExtractor={(item) => item.id}
         renderItem={(item) => <ProductCardView item={item} />}
         contentContainerStyle={styles.container}

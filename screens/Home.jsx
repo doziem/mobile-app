@@ -32,6 +32,7 @@ const Home = () => {
         <Carousel />
         <Headings />
         <ProductsRow />
+        <ProductsRow />
       </ScrollView>
     </SafeAreaView>
   );

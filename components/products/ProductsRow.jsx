@@ -6,9 +6,8 @@ import useFetch from '../../hook/useFetch';
 
 const ProductsRow = () => {
   const { data, isLoading, error } = useFetch();
-  console.log('DATA::', data);
   return (
-    <View style={{ marginTop: 5, marginHorizontal: 12 }}>
+    <View style={{ marginTop: 5, marginHorizontal: 1 }}>
       {isLoading ? (
         <ActivityIndicator size={SIZES.xxLarge} color={COLORS.primary} />
       ) : error ? (
@@ -16,10 +15,11 @@ const ProductsRow = () => {
       ) : (
         <FlatList
           data={data}
+          initialNumToRender={3}
           keyExtractor={({ item }) => item?._id}
           renderItem={({ item }) => <ProductCardView item={item} />}
           horizontal
-          contentContainerStyle={{ columnGap: SIZES.medium }}
+          contentContainerStyle={{ columnGap: SIZES.small }}
         />
       )}
     </View>

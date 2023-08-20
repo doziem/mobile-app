@@ -8,7 +8,7 @@ export default styles = StyleSheet.create({
     container: {
         width: 200,
         height: 240,
-        marginEnd: 22,
+        marginEnd: 2,
         borderRadius: SIZES.medium,
         backgroundColor: COLORS.secondary
     },
@@ -21,7 +21,7 @@ export default styles = StyleSheet.create({
         overflow: 'hidden'
     },
     image: {
-        aspectRatio: 1,
+        aspectRatio: 2,
         resizeMode: 'cover'
     },
     details: {

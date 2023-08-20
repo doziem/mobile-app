@@ -20,10 +20,10 @@ export default function ProductCardView({ item }) {
           />
         </View>
         <View style={styles.details}>
-          <Text style={styles.title} numberOfLines={1}>
+          <Text style={styles.title} numberOfLines={2}>
             {item?.title}
           </Text>
-          <Text style={styles.supplier} numberOfLines={1}>
+          <Text style={styles.supplier} numberOfLines={2}>
             Product:
           </Text>
           <Text style={styles.price}>$12,312</Text>
